@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=all/all;
+X-KDE-StartupNotify=false
+X-KDE-Priority=TopLevel
+Actions=sendDesktop;
+InitialPreference=99
+
+[Desktop Action sendDesktop]
+Name=Send to Desktop (ln -s)
+Exec=ln -s %F ~/Desktop
+Icon=desktop
