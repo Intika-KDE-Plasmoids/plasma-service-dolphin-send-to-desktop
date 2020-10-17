@@ -17,5 +17,5 @@ Version=5.21
 
 [Desktop Action sendDesktop]
 Name=Send to Desktop (ln -s)
-Exec=ln -s %F ~/Desktop
+Exec=/bin/bash -c "ln -s %F $(grep DESKTOP ~/.config/user-dirs.dirs | cut -d'"' -f2)"
 Icon=desktop
