@@ -10,12 +10,20 @@ Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 MimeType=all/all;
 X-KDE-StartupNotify=false
-X-KDE-Priority=TopLevel
-Actions=sendDesktop;
+Actions=sendDesktop;LinkHere
+X-KDE-Submenu=Send To...
+X-KDE-Submenu[it]=Invia a...
 InitialPreference=99
 Version=5.21
 
 [Desktop Action sendDesktop]
 Name=Send to Desktop (ln -s)
-Exec=ln -s %F ~/Desktop
+Name[it]=Invia Alla Scrivania (ln -s)
+Exec=/bin/bash -c "ln -s %F $(grep DESKTOP ~/.config/user-dirs.dirs | cut -d'"' -f2)"
+Icon=desktop
+
+[Desktop Action LinkHere]
+Name=Create Link Here (ln -s)
+Name[it]=Crea Collegamento Qui (ln -s)
+Exec=/bin/bash -c "ln -s %F ./$(basename "%F" )-link"
 Icon=desktop
